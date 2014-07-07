@@ -99,6 +99,7 @@ class Capybara::Selenium::Driver < Capybara::Driver::Base
           # instead.
         end
         @browser.execute_script %Q{
+          window.onbeforeunload = null;
           window.location = "about:blank";
         }
       rescue Selenium::WebDriver::Error::UnhandledAlertError
